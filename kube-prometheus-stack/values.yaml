@@ -45,13 +45,13 @@ kube-prometheus-stack:
       existingSecret: grafana-admin-credentials
       userKey: admin-user-grafana
       passwordKey: admin-password-grafana
-    persistence:
-      enabled: true
-      storageClassName: "manual"
-      accessModes:
-         - ReadWriteOnce
-      size: 3Gi
-      volumeName: grafana-pv-volume
+#    persistence:
+#      enabled: true
+#      storageClassName: "manual"
+#      accessModes:
+#         - ReadWriteOnce
+#      size: 3Gi
+#      volumeName: grafana-pv-volume
     ## Configure additional grafana datasources (passed through tpl)
     ## ref: http://docs.grafana.org/administration/provisioning/#datasources
     additionalDataSources: [ ]
