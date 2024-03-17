@@ -35,7 +35,7 @@ kube-prometheus-stack:
       prometheus: true
       prometheusOperator: true
 
-  alertmanager:
+#  alertmanager:
 #    fullnameOverride: alertmanager
 
   grafana:
