@@ -51,6 +51,7 @@ kube-prometheus-stack:
       accessModes:
          - ReadWriteOnce
       size: 3Gi
+      volumeName: grafana-pv-volume
     ## Configure additional grafana datasources (passed through tpl)
     ## ref: http://docs.grafana.org/administration/provisioning/#datasources
     additionalDataSources: [ ]
