@@ -1,5 +1,5 @@
 kube-prometheus-stack:
-#  fullnameOverride: prometheus
+  fullnameOverride: prometheus
 
   defaultRules:
     create: true
@@ -35,12 +35,12 @@ kube-prometheus-stack:
       prometheus: true
       prometheusOperator: true
 
-#  alertmanager:
-#    fullnameOverride: alertmanager
+  alertmanager:
+    fullnameOverride: alertmanager
 
   grafana:
     enabled: true
-#    fullnameOverride: grafana
+    fullnameOverride: grafana
     admin:
       existingSecret: grafana-admin-credentials
       userKey: admin-user-grafana
@@ -77,7 +77,7 @@ kube-prometheus-stack:
       - 10.255.0.101
 
   kube-state-metrics:
-#    fullnameOverride: kube-state-metrics
+    fullnameOverride: kube-state-metrics
     selfMonitor:
       enabled: true
     prometheus:
@@ -103,7 +103,7 @@ kube-prometheus-stack:
           targetLabel: kubernetes_node
 
   prometheus-node-exporter:
-#    fullnameOverride: node-exporter
+    fullnameOverride: node-exporter
     podLabels:
       jobLabel: node-exporter
     extraArgs:
