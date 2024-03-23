@@ -11,15 +11,10 @@ configMap:
 config:
   exporters:
     otlp:
-      protocols:
-        grpc:
-          endpoint: tempo:4317
-          tls:
-            insecure: true
-        http:
-          endpoint: tempo:4318
-          tls:
-            insecure: true
+      grpc:
+        endpoint: tempo:4317
+        tls:
+          insecure: true
     loki:
       endpoint: http://loki:3100/loki/api/v1/push
       tls:
