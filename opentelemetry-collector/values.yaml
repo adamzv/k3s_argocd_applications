@@ -10,7 +10,7 @@ configMap:
 # For example, {{ REDACTED_EMAIL }} becomes {{` {{ REDACTED_EMAIL }} `}}.
 config:
   exporters:
-    otlp/tempo:
+    otlp:
       protocols:
         grpc:
           endpoint: http://tempo:4317
@@ -50,7 +50,7 @@ config:
           - otlp
       metrics:
         exporters:
-          - otlp/tempo
+          - otlp
         processors:
           - memory_limiter
           - batch
@@ -58,7 +58,7 @@ config:
           - otlp
       traces:
         exporters:
-          - otlp/tempo
+          - otlp
         processors:
           - memory_limiter
           - batch
