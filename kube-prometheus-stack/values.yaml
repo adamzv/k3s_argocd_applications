@@ -54,7 +54,12 @@ kube-prometheus-stack:
 #      volumeName: grafana-pv-volume
     ## Configure additional grafana datasources (passed through tpl)
     ## ref: http://docs.grafana.org/administration/provisioning/#datasources
-    additionalDataSources: [ ]
+    additionalDataSources:
+      - name: Tempo
+        type: tempo
+        url: http://tempo.monitoring:3100/
+        basicAuth: false
+        access: proxy
 
   kubeControllerManager:
     enabled: true
