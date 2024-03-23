@@ -10,6 +10,7 @@ configMap:
 # For example, {{ REDACTED_EMAIL }} becomes {{` {{ REDACTED_EMAIL }} `}}.
 config:
   exporters:
+    debug: {}
     otlp:
       endpoint: tempo:4317
       tls:
@@ -43,6 +44,7 @@ config:
       logs:
         exporters:
           - loki
+          - debug
         processors:
           - memory_limiter
           - batch
