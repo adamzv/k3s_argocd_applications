@@ -171,7 +171,7 @@ serviceMonitor:
 
 persistence:
   enabled: true
-  storageClassName: hetzner-csi
+  storageClassName: hcloud-volumes
   accessModes:
     - ReadWriteOnce
   size: 10Gi
