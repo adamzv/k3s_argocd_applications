@@ -167,6 +167,7 @@ kube-prometheus-stack:
       serviceMonitorSelectorNilUsesHelmValues: false
       podMonitorSelectorNilUsesHelmValues: false
       probeSelectorNilUsesHelmValues: false
+      enableRemoteWriteReceiver: true
       retention: 96h
       enableAdminAPI: true
       walCompression: true
