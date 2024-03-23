@@ -10,13 +10,14 @@ configMap:
 # For example, {{ REDACTED_EMAIL }} becomes {{` {{ REDACTED_EMAIL }} `}}.
 config:
   exporters:
-    debug: {}
     otlp:
       endpoint: tempo:4317
       tls:
         insecure: true
+    debug:
+      verbosity: detailed
     loki:
-      endpoint: http://loki.monitoring:3100/loki/api/v1/push
+      endpoint: http://localhost:3100/loki/api/v1/push
       tls:
         insecure: true
   extensions:
