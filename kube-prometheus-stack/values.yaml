@@ -60,6 +60,14 @@ kube-prometheus-stack:
         url: http://tempo.monitoring:3100/
         basicAuth: false
         access: proxy
+      - name: Loki
+        type: loki
+        url: http://loki.monitoring:3100/
+        basicAuth: false
+        access: proxy
+        jsonData:
+          timeout: 60
+          maxLines: 1000
 
   kubeControllerManager:
     enabled: true
