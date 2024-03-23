@@ -57,6 +57,7 @@ kube-prometheus-stack:
     additionalDataSources:
       - name: Tempo
         type: tempo
+        uid: tempo
         url: http://tempo.monitoring:3100/
         basicAuth: false
         access: proxy
@@ -77,6 +78,7 @@ kube-prometheus-stack:
             enabled: true
       - name: Loki
         type: loki
+        uid: loki
         url: http://loki.monitoring:3100/
         basicAuth: false
         access: proxy
