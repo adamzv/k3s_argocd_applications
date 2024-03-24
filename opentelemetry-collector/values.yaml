@@ -54,14 +54,14 @@ config:
           - batch
         receivers:
           - otlp
-      metrics:
-        exporters:
-          - otlp
-        processors:
-          - memory_limiter
-          - batch
-        receivers:
-          - otlp
+#      metrics:
+#        exporters:
+#          - otlp
+#        processors:
+#          - memory_limiter
+#          - batch
+#        receivers:
+#          - otlp
       traces:
         exporters:
           - otlp
