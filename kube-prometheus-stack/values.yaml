@@ -64,8 +64,8 @@ kube-prometheus-stack:
         jsonData:
           tracesToLogsV2:
             datasourceUid: 'loki'
-            spanStartTimeShift: '1h'
-            spanEndTimeShift: '-1h'
+            spanStartTimeShift: '-1h'
+            spanEndTimeShift: '1h'
             tags: [{key: 'service.name', value: 'job'}]
             filterByTraceID: true
             filterBySpanID: true
