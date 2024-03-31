@@ -20,6 +20,22 @@ config:
       endpoint: http://loki:3100/loki/api/v1/push
       tls:
         insecure: true
+        # TODO
+#    prometheus:
+#      endpoint: 0.0.0.0:8889
+#      send_timestamps: true
+#      metric_expiration: 180m
+#      resource_to_telemetry_conversion:
+#        enabled: true
+    prometheusremotewrite:
+      endpoint: http://prometheus-prometheus.monitoring:9090/api/v1/push
+      send_timestamps: true
+      wal: # Enabling the Write-Ahead-Log for the exporter.
+        directory: ./prom_rw # The directory to store the WAL in
+        buffer_size: 100 # Optional count of elements to be read from the WAL before truncating; default of 300
+        truncate_frequency: 45s
+      resource_to_telemetry_conversion:
+        enabled: true
   extensions:
     # The health_check extension is mandatory for this chart.
     # Without the health_check extension the collector will fail the readiness and liveliness probes.
@@ -54,14 +70,14 @@ config:
           - batch
         receivers:
           - otlp
-#      metrics:
-#        exporters:
-#          - otlp
-#        processors:
-#          - memory_limiter
-#          - batch
-#        receivers:
-#          - otlp
+      metrics:
+        exporters:
+          - prometheusremotewrite
+        processors:
+          - memory_limiter
+          - batch
+        receivers:
+          - otlp
       traces:
         exporters:
           - otlp
