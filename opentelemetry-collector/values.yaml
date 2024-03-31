@@ -20,7 +20,7 @@ config:
       endpoint: http://loki:3100/loki/api/v1/push
       tls:
         insecure: true
-        # TODO
+      # TODO
 #    prometheus:
 #      endpoint: 0.0.0.0:8889
 #      send_timestamps: true
@@ -28,7 +28,7 @@ config:
 #      resource_to_telemetry_conversion:
 #        enabled: true
     prometheusremotewrite:
-      endpoint: http://prometheus-prometheus.monitoring:9090/api/v1/push
+      endpoint: http://prometheus-prometheus.monitoring:9090/api/v1/write
       resource_to_telemetry_conversion:
         enabled: true
   extensions:
