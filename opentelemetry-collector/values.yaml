@@ -29,7 +29,6 @@ config:
 #        enabled: true
     prometheusremotewrite:
       endpoint: http://prometheus-prometheus.monitoring:9090/api/v1/push
-      send_timestamps: true
       wal: # Enabling the Write-Ahead-Log for the exporter.
         directory: ./prom_rw # The directory to store the WAL in
         buffer_size: 100 # Optional count of elements to be read from the WAL before truncating; default of 300
