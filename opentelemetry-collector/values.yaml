@@ -57,7 +57,7 @@ config:
         scrape_configs:
           - job_name: 'garbidz'
             static_configs:
-              - targets: ['garbidz-deployment.garbidz-staging:8080/api/actuator/prometheus'] # Adjust the Prometheus address and port
+              - targets: ['http://garbidz-deployment.garbidz-staging:8080/api/actuator/prometheus'] # Adjust the Prometheus address and port
   service:
     telemetry:
       logs:
