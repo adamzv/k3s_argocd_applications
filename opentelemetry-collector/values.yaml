@@ -56,8 +56,9 @@ config:
           scrape_interval: 15s # Adjust this interval as needed
         scrape_configs:
           - job_name: 'garbidz'
+            metrics_path: '/api/actuator/prometheus'
             static_configs:
-              - targets: ['http://garbidz-deployment.garbidz-staging:8080/api/actuator/prometheus'] # Adjust the Prometheus address and port
+              - targets: ['garbidz-deployment.garbidz-staging:8080'] # Adjust the Prometheus address and port
   service:
     telemetry:
       logs:
