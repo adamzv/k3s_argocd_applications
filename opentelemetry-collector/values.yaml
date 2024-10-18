@@ -28,7 +28,7 @@ config:
 #      resource_to_telemetry_conversion:
 #        enabled: true
     prometheusremotewrite:
-      endpoint: http://prometheus-prometheus.monitoring:9090/api/v1/push
+      endpoint: http://prometheus-prometheus.monitoring:9090/api/v1/write
       resource_to_telemetry_conversion:
         enabled: true
       tls:
@@ -70,6 +70,7 @@ config:
       metrics:
         exporters:
           - prometheusremotewrite
+          - debug
         processors:
           - memory_limiter
           - batch
