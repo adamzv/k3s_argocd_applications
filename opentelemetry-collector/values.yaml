@@ -50,6 +50,14 @@ config:
           endpoint: 0.0.0.0:4317
         http:
           endpoint: 0.0.0.0:4318
+    prometheus:
+      config:
+        global:
+          scrape_interval: 15s # Adjust this interval as needed
+        scrape_configs:
+          - job_name: 'garbidz'
+            static_configs:
+              - targets: ['garbidz-deployment.garbidz-staging:8080/api/actuator/prometheus'] # Adjust the Prometheus address and port
   service:
     telemetry:
       logs:
@@ -76,6 +84,7 @@ config:
           - batch
         receivers:
           - otlp
+          - prometheus
       traces:
         exporters:
           - otlp
