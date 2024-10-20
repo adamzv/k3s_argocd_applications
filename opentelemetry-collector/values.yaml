@@ -84,12 +84,10 @@ config:
       metrics:
         exporters:
           - prometheusremotewrite
-          - debug
         processors:
           - memory_limiter
           - batch
         receivers:
-          - otlp
           - prometheus
       traces:
         exporters:
