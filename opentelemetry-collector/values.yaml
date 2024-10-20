@@ -60,7 +60,7 @@ config:
             static_configs:
               - targets: ['garbidz-deployment.garbidz-staging:8080'] # Adjust the Prometheus address and port
             metric_relabel_configs:
-              - source_labels: [__name__, uri, http_route]
+              - source_labels: [__name__, uri]
                 regex: ".*actuator.*"
                 action: drop
 
