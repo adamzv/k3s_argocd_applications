@@ -59,6 +59,11 @@ config:
             metrics_path: '/api/actuator/prometheus'
             static_configs:
               - targets: ['garbidz-deployment.garbidz-staging:8080'] # Adjust the Prometheus address and port
+            metric_relabel_configs:
+              - source_labels: [__name__, uri, http_route]
+                regex: ".*actuator.*"
+                action: drop
+
   service:
     telemetry:
       logs:
